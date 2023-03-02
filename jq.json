@@ -1,0 +1,11 @@
+{
+    "products":[
+        {"name":"purfume", "price":"1300","image":"images/pur1.jpg"},
+        {"name":"purfume1", "price":"1400" , "image":"images/pur2.jpg"},
+        {"name":"purfume2", "price":"1500" , "image":"images/pur3.jpg"},
+        {"name":"purfume3", "price":"1600" , "image":"images/pur4.jpg"}
+
+
+    ]
+
+}

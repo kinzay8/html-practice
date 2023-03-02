@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regular expression</title>
+</head>
+<body>
+
+    <form action="">
+        <label for="">Name:</label>
+        <input type="email" id="name">
+        <br>
+        <br>
+        <span id="sp"></span>
+        <br>
+        <br>    
+        <label for="">Email:</label>
+        <input type="text" id="email">
+        <br>
+        <br>
+        <span id="s"></span>
+        <br>
+        <br>
+        <button type="button" onclick="fun()">Submit</button>
+    </form>
+
+
+
+
+    <script>
+        function fun(){
+            var inp=document.getElementById("name").value;
+            var a=document.getElementById("email").value;
+            var r=/^[A-za-z\s]{3,}$/
+            var re=/^[\w]+@[A-za-z]{4,5}[.]{1}[A-za-z]{3,}$/
+
+           if(!inp){
+            document.getElementById("name").style="border:1px solid red";
+            document.getElementById("sp").style="color:red";
+            document.getElementById("sp").innerHTML="please filled out this field";
+           }
+           else if(!r.test(inp)){
+            document.getElementById("name").style="border:1px solid red";
+            document.getElementById("sp").style="color:red"
+            document.getElementById("sp").innerHTML="in valid";
+           }
+           else{
+            document.getElementById("name").style="border:1px solid green";
+            document.getElementById("sp").innerHTML="";
+           }
+           if(!a){
+            document.getElementById("email").style="border:1px solid red";
+            document.getElementById("s").style="color:red";
+            document.getElementById("s").innerHTML="please filled out this field";
+           }
+           else if(!re.test(a)){
+            document.getElementById("email").style="border:1px solid red";
+            document.getElementById("s").style="color:red";
+            document.getElementById("s").innerHTML="in valid";
+           }
+           else{
+            document.getElementById("email").style="border:1px solid green";
+            document.getElementById("s").innerHTML="";
+           }
+        }
+
+
+    </script>
+    
+</body>
+</html>

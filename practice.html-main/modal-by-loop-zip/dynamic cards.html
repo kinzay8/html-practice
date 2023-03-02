@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic cards</title>
+    <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <script src="bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row mt-5">
+            
+
+        </div>
+    </div>
+
+
+
+
+
+    <script>
+        var obj =[
+            {name: "pur1" , des: "Lorem ipsum dolor, sit amet consectetur adipisicing elit." ,image: "images/pur1.jpg"},
+            {name: "pur2" , des: "Lorem ipsum dolor, sit amet consectetur adipisicing elit." ,image: "images/pur2.jpg"},
+            {name: "pur3" , des: "Lorem ipsum dolor, sit amet consectetur adipisicing elit." ,image: "images/pur3.jpg"},
+            {name: "pur4" , des: "Lorem ipsum dolor, sit amet consectetur adipisicing elit." ,image: "images/pur4.jpg"},
+            {name: "pur5" , des: "Lorem ipsum dolor, sit amet consectetur adipisicing elit." ,image: "images/pur5.webp"},
+        ];
+        var r = document.querySelector(".row");
+        for(var i = 0 ; i<obj.length ; i++){
+           r.innerHTML+= `<div class="col-lg-2 col-md-3 col-sm-6 col-12">
+                <div class="card">
+                    <img src="`+obj[i].image+`" alt="" style="height:200px; width:100%">
+                    <div class="card-body">
+                        <h3 class="card-title">`+obj[i].name+`</h3>
+                        <p class="card-text">`+obj[i].des+`</p>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#modal1`+ i +`">Details</button>
+                </div>
+                <div class="modal" id="modal1`+ i +`">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <img src="`+obj[i].image+`" alt="" style="height:400px; width:100%">
+                        </div>
+                        <div class="modal-body">
+                            <h3 class="modal-title">`+obj[i].name+`</h3>
+                            <p>`+obj[i].des+`</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>`
+
+                
+            
+
+
+             
+         
+            
+           
+        }
+           
+
+    </script>
+    
+</body>
+</html>

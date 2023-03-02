@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>geo grapical api</title>
+    <!-- <link rel="stylesheet" href="bootstrap-4.0.0-dist/css/bootstrap.min.css">
+    <script src="jquery-3.5.1.min.js"></script>
+    <script src="bootstrap-4.0.0-dist/js/bootstrap.min.js"></script> -->
+    <script 
+    src="https://maps.googleapis.com/maps/api/js">
+</script>
+</head>
+<style>
+    h3{
+        background-color: blanchedalmond;
+        color: palevioletred;
+        font-size: 28px;
+    }
+    #demo{
+        height: 600px;
+    }
+</style>
+<body>
+    <div class="container mt-5">
+        <h3>Geo grapical location</h3>
+        <button type="button" onclick="get()">find your location</button>
+        <div id="demo"></div>
+    </div>
+
+
+
+
+    <script>
+     var a =document.getElementById("demo");
+     function get(){
+        if(navigator.geolocation){
+            alert("supporting")
+            navigator.geolocation.getCurrentPosition(getcoordinates);
+        }
+        else{
+            alert("not supporting");
+        }
+     }
+      function getcoordinates(pos){
+        a.innerHTML="longitude" +pos.coords.longitude +  "<br>"+ "latitude" +pos.coords.latitude;
+        var latlng = new google.maps.LatLng(24.8631634,67.0742866);
+        var map = new google.maps.Map(a,{
+
+            center: latlng ,
+            zoom: 18,
+            mapTypeId: "roadmap"
+        })
+        var marker =  new google.maps.Marker({
+            position:latlng,
+            map:map,
+            drag:true
+        })
+      }
+    </script>
+    
+</body>
+</html>
